@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
 import Home from './pages/home'
+import Chat from './pages/chat'
 const router = createBrowserRouter([
   {
     path:"/",
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home/>
+      },
+      {
+        path: "/chat",
+        element: <Chat/>
       },
     ]
   },
