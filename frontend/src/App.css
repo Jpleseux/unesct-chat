@@ -8,6 +8,7 @@
   color: #00ff99;
   background-color: #0f0f0f;
 }
+
 .home__container {
   width: 100%;
   height: 100vh;
@@ -17,23 +18,30 @@
   align-items: center;
   background: linear-gradient(135deg, #0f0f0f 0%, #1b1b1b 100%);
 }
+
 .home__container > * {
   margin-bottom: 10px;
 }
+
 .home__header {
   margin-bottom: 30px;
   color: #ff00ff;
   text-shadow: 2px 2px 5px #ff0099;
+  text-align: center; /* Centraliza o texto */
 }
+
 .username__input {
   padding: 10px;
-  width: 50%;
+  width: 80%; /* Ajusta a largura para 80% */
+  max-width: 400px; /* Limita a largura máxima */
   background-color: #1b1b1b;
   border: 1px solid #ff00ff;
   color: #00ff99;
 }
+
 .home__cta {
-  width: 200px;
+  width: 80%; /* Ajusta a largura para 80% */
+  max-width: 200px; /* Limita a largura máxima */
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
@@ -44,6 +52,7 @@
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
+
 .home__cta:hover {
   background-color: #00ff99;
   color: #0f0f0f;
@@ -53,40 +62,48 @@
   width: 100%;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: stretch; /* Permite que o conteúdo ocupe toda a altura disponível */
   background-color: #0f0f0f;
 }
+
 .chat__sidebar {
   height: 100%;
   background-color: #1b1b1b;
   flex: 0.2;
   padding: 20px;
   border-right: 1px solid #ff00ff;
+  overflow-y: auto; /* Permite rolagem se o conteúdo for muito longo */
 }
+
 .chat__main {
   height: 100%;
   flex: 0.8;
-  background-color: #0f0f0f;
+  display: flex;
+  flex-direction: column; /* Adiciona coluna para o conteúdo */
 }
+
 .chat__header {
   margin: 30px 0 20px 0;
   color: #ff00ff;
   text-shadow: 2px 2px 5px #ff0099;
+  text-align: center; /* Centraliza o texto */
 }
+
 .chat__users > * {
   margin-bottom: 10px;
   color: #00ff99;
   font-size: 14px;
 }
+
 .online__users > * {
-  margin-bottom: 10px;
+  margin-bottom: 1%;
   color: rgb(238, 102, 102);
   font-style: italic;
 }
 
 .chat__mainHeader {
   width: 100%;
-  height: 10vh;
+  height: auto; /* Permite que a altura se ajuste conforme o conteúdo */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,6 +111,7 @@
   background-color: #1b1b1b;
   border-bottom: 2px solid #ff00ff;
 }
+
 .leaveChat__btn {
   padding: 10px;
   width: 150px;
@@ -104,6 +122,7 @@
   color: #00ff99;
   transition: background-color 0.3s ease;
 }
+
 .leaveChat__btn:hover {
   background-color: #00ff99;
   color: #0f0f0f;
@@ -121,22 +140,24 @@
 .message__container > * {
   margin-bottom: 10px;
 }
+
 .chat__footer {
   padding: 10px;
   background-color: #1b1b1b;
-  height: 10vh;
+  height: auto; /* Permite que a altura se ajuste conforme o conteúdo */
   border-top: 2px solid #ff00ff;
 }
+
 .form {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .message {
-  width: 80%;
-  height: 100%;
+  width: 80%; /* Ajusta a largura para 80% */
+  max-width: 400px; /* Limita a largura máxima */
   border-radius: 10px;
   border: 1px solid #ff00ff;
   outline: none;
@@ -144,8 +165,10 @@
   background-color: #1b1b1b;
   color: #00ff99;
 }
+
 .sendBtn {
-  width: 150px;
+  width: 80%; /* Ajusta a largura para 80% */
+  max-width: 150px; /* Limita a largura máxima */
   background-color: #ff0099;
   padding: 10px;
   border: none;
@@ -154,6 +177,7 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .sendBtn:hover {
   background-color: #00ff99;
   color: #0f0f0f;
@@ -161,33 +185,88 @@
 
 .message__recipient {
   background-color: #ff00ff;
-  width: 300px;
+  width: auto; /* Permite que a largura se ajuste automaticamente */
+  max-width: 300px;
   padding: 10px;
   border-radius: 10px;
   font-size: 15px;
   color: #0f0f0f;
+  margin-bottom: 1%;
 }
+
 .message__sender {
   background-color: #00ff99;
+  width: auto; /* Permite que a largura se ajuste automaticamente */
   max-width: 300px;
   padding: 10px;
   border-radius: 10px;
   margin-left: auto;
   font-size: 15px;
   color: #0f0f0f;
+  margin-bottom: 1%;
 }
+
 .message__chats > p {
   font-size: 13px;
   color: #00ff99;
 }
+
 .sender__name {
   text-align: right;
   color: #ff0099;
 }
+
 .message__status {
   position: fixed;
   bottom: 50px;
   font-size: 13px;
   font-style: italic;
   color: #ff00ff;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  .chat__sidebar {
+    flex: 0.3; /* Aumenta a largura da sidebar em telas menores */
+  }
+
+  .chat__mainHeader {
+    flex-direction: column; /* Coloca os itens em coluna */
+  }
+
+  .leaveChat__btn {
+    width: 100%; /* Botão ocupa 100% em telas menores */
+  }
+
+  .message {
+    width: 70%; /* Mensagens ocupam 70% da largura em telas menores */
+  }
+
+  .sendBtn {
+    width: 70%; /* Botão de enviar ocupa 70% em telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .home__header {
+    font-size: 20px; /* Reduz o tamanho da fonte no cabeçalho */
+  }
+
+  .username__input {
+    width: 90%; /* Ajusta a largura para 90% em telas menores */
+  }
+
+  .home__cta,
+  .sendBtn {
+    width: 90%; /* Ajusta os botões para 90% em telas menores */
+  }
+
+  .chat__sidebar,
+  .chat__main {
+    padding: 10px; /* Reduz o padding em telas menores */
+  }
+
+  .message {
+    width: 85%; /* Mensagens ocupam 85% da largura em telas menores */
+  }
 }
