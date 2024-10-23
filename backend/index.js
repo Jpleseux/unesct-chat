@@ -50,7 +50,11 @@ app.get('/users', (req, res) => {
     users: users // Retorna a lista de usuários
   });
 });
-
+app.get("/test", (res) => {
+  res.json({
+    message: "HEllo user"
+  })
+})
 // Rota POST para criar um novo usuário com o nome fornecido na URL
 app.post("/new/:name", (req, res) => {
   const userName = req.params.name; // Nome do usuário extraído da URL
