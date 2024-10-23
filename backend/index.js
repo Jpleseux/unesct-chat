@@ -50,7 +50,7 @@ app.get('/users', (req, res) => {
     users: users // Retorna a lista de usuários
   });
 });
-app.get("/test", (res) => {
+app.get("/test", (req, res) => {
   res.json({
     message: "HEllo user"
   })
