@@ -3,11 +3,12 @@ const app = express();
 const PORT = 4000; // Define a porta onde o servidor vai rodar
 const http = require('http').Server(app); // Cria o servidor HTTP
 const cors = require('cors'); // Middleware para permitir requisições de outros domínios
-
+const dotenv = require("dotenv")
+dotenv.config()
 let users = []; // Lista para armazenar os usuários logados
 const socketIO = require('socket.io')(http, {
   cors: {
-    origin: "http://localhost:5173" // Permite conexões via Socket.IO desse endereço
+    origin: process.env.FRONTEND_URL, // Permite conexões via Socket.IO desse endereço
   }
 });
 
