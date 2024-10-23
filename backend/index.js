@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 4000; // Define a porta onde o servidor vai rodar
+const PORT = process.env.PORT || 4000; // Define a porta onde o servidor vai rodar
 const http = require('http').Server(app); // Cria o servidor HTTP
 const cors = require('cors'); // Middleware para permitir requisições de outros domínios
 const dotenv = require("dotenv")
@@ -83,3 +83,4 @@ app.post("/new/:name", (req, res) => {
 http.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+module.exports = app
