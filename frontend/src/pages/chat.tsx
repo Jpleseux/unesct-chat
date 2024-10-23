@@ -92,7 +92,7 @@ function Chat() {
   // useEffect para gerenciar a saída do usuário ao fechar a aba ou ficar inativo
   useEffect(() => {
     // Função que executa ao fechar ou recarregar a aba
-    const handleTabClose = (event) => {
+    const handleTabClose = (event: BeforeUnloadEvent) => {
       exitUser(); // Remove o usuário
       event.returnValue = ''; // Exibe alerta padrão
     };
